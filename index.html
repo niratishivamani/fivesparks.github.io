@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FiveSparks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveSparks | AI Prompts</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>FiveSparks</h1>
-    <p>This is my first website hosted on GitHub.</p>
+
+    <header>
+        <div class="header-container">
+            <h1>FiveSparks ✨</h1>
+            <p>A gallery of powerful AI prompts and the images.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="gallery-item">
+            <img src="images/your-image-1.jpg" alt="A cyberpunk cityscape at sunset">
+            <div class="prompt-container">
+                <p class="prompt-text">A cinematic shot of a futuristic city with neon lights and flying cars, digital art</p>
+                <button class="copy-button" onclick="copyPrompt(this)">Copy Prompt</button>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/your-image-2.jpg" alt="A watercolor painting of a serene forest">
+            <div class="prompt-container">
+                <p class="prompt-text">A tranquil watercolor painting of a sunlit forest, surrounded by fireflies, soft colors, detailed</p>
+                <button class="copy-button" onclick="copyPrompt(this)">Copy Prompt</button>
+            </div>
+        </div>
+        </main>
+    
+    <footer>
+        <p>&copy; 2025 FiveSparks. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptText = button.previousElementSibling.textContent;
+            navigator.clipboard.writeText(promptText)
+                .then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy Prompt';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+        }
+    </script>
+
 </body>
 </html>
+
